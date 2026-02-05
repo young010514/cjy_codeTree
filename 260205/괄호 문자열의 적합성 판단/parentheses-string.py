@@ -7,8 +7,10 @@ for i in list(str):
     
     if i == "(":
         arr.append(i)
-    else:
-        arr.pop()
+    elif i == ")":
+        if arr:
+            arr.pop()
+        else: break
 if arr == []:
     result = "Yes"
 print(result)
