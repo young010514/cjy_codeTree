@@ -8,7 +8,7 @@ for i in list(str):
     if i == "(":
         arr.append(i)
     elif i == ")":
-        if arr == []:
+        if arr != []:
             arr.pop()
         else: break
 if arr == []:
