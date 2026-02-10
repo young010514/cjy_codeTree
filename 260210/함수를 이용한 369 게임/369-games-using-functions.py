@@ -1,15 +1,25 @@
 a, b = map(int, input().split())
 
 # Please write your code here.
-cnt =0
+cnt = 0
+
+
 def find(num):
-    global cnt
-    if num % 3 ==0 :
-        cnt +=1
-    elif num // 10 != 0 and (num //10) % 3 ==0:
+    if num % 3 == 0:
+        return 1
+    else:
+        return 0
+
+
+def num369(num):
+    lst = list(map(int, list(str(num))))
+    for x in lst:
+        if x in [3, 6, 9]:
+            return 1
+    return 0
+
+
+for i in range(a, b + 1):
+    if find(i) or num369(i):
         cnt += 1
-    elif  num % 3 !=0  and  (num % 10 ) % 3 == 0:
-        cnt += 1
-for i in range(a,b+1):
-    find(i)
 print(cnt)
